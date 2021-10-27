@@ -1,0 +1,8 @@
+
+config:
+    name: "comment testsuite"
+
+testcases:
+-
+    name: 收货接口测试用例
+    testcase: testcases/comment_testcase.yml

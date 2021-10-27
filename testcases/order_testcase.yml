@@ -1,0 +1,16 @@
+
+config:
+    name: "order testcase"
+    variables:
+        title: 登录成功
+
+teststeps:
+-
+    name: 登录请求
+    api: api/login_api.yml
+
+    validate:
+        - eq: [content.msg, 登录成功]
+-
+    name: 提交订单
+    api: api/order_api.yml

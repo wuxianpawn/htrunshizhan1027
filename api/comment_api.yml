@@ -1,0 +1,20 @@
+
+name: 评论api
+base_url: ${ENV(BASE_URL)}
+request:
+    # 依赖用户登录接口，通过cookie关联
+    url: /mtx/index.php?s=/index/order/commentssave.html
+    method: POST
+    headers:
+        X-Requested-With: "XMLHttpRequest"
+    data:
+
+        rating[]: '5'
+        content[]: '非常好物美价廉非常好用~(｡≧3≦)ﾉ⌒☆'
+        goods_id[]: '1'
+        # 依赖提交订单接口里面的订单号
+        id: $order_id
+
+validate:
+    - eq: ["status_code", 200]
+#    - eq: [content.msg, 登录成功]

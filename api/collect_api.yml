@@ -1,0 +1,17 @@
+
+name: 收货api
+base_url: ${ENV(BASE_URL)}
+request:
+    # 收货接口依赖管理员登录接口，通过cookie关联
+    url: /mtx/admin.php?s=/order/collect.html
+    method: POST
+    headers:
+        X-Requested-With: "XMLHttpRequest"
+    data:
+        # order_id和user_id 都是从下订单响应里提取
+        id: $order_id
+        value: $user_id
+
+validate:
+    - eq: ["status_code", 200]
+#    - eq: [content.msg, 登录成功]

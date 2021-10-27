@@ -1,0 +1,11 @@
+
+config:
+    name: "管理员登录 testcase"
+    variables:
+        title: 登录成功
+
+teststeps:
+-
+    name: 管理员登录接口测试
+    api: api/admin_api.yml
+

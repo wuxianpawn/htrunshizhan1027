@@ -1,0 +1,8 @@
+
+config:
+    name: "order testsuite"
+
+testcases:
+-
+    name: 支付接口测试用例
+    testcase: testcases/pay_testcase.yml
